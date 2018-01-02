@@ -5,98 +5,27 @@
 [![Windows Build Status][win-img]][win-url]
 [![Gitter Chat][git-img]][git-url]
 
-[postcss-negative-padding] lets you do this in CSS.
+[postcss-negative-padding] lets you use negative values when using `padding` which creates the appropriate negative margin to compliment it.
 
 ```css
-.example {}
+.example {
+    padding: -20px;
+}
 
 /* becomes */
 
-.example {}
+.example {
+    padding: 20px;
+    margin: -20px;
+}
 ```
 
-## Usage
-
-Add [postcss-negative-padding] to your build tool:
+## Setup
 
 ```bash
 npm install postcss-negative-padding --save-dev
 ```
 
-#### Node
-
-Use [postcss-negative-padding] to process your CSS:
-
-```js
-require('postcss-negative-padding').process(YOUR_CSS);
-```
-
-#### PostCSS
-
-Add [PostCSS] to your build tool:
-
-```bash
-npm install postcss --save-dev
-```
-
-Use [postcss-negative-padding] as a plugin:
-
-```js
-postcss([
-  require('postcss-negative-padding')()
-]).process(YOUR_CSS);
-```
-
-#### Gulp
-
-Add [Gulp PostCSS] to your build tool:
-
-```bash
-npm install gulp-postcss --save-dev
-```
-
-Use [postcss-negative-padding] in your Gulpfile:
-
-```js
-var postcss = require('gulp-postcss');
-
-gulp.task('css', function () {
-  return gulp.src('./src/*.css').pipe(
-    postcss([
-      require('postcss-negative-padding')()
-    ])
-  ).pipe(
-    gulp.dest('.')
-  );
-});
-```
-
-#### Grunt
-
-Add [Grunt PostCSS] to your build tool:
-
-```bash
-npm install grunt-postcss --save-dev
-```
-
-Use [postcss-negative-padding] in your Gruntfile:
-
-```js
-grunt.loadNpmTasks('grunt-postcss');
-
-grunt.initConfig({
-  postcss: {
-    options: {
-      use: [
-        require('postcss-negative-padding')()
-      ]
-    },
-    dist: {
-      src: '*.css'
-    }
-  }
-});
-```
 
 [npm-url]: https://www.npmjs.com/package/postcss-negative-padding
 [npm-img]: https://img.shields.io/npm/v/postcss-negative-padding.svg
@@ -109,5 +38,3 @@ grunt.initConfig({
 
 [postcss-negative-padding]: https://github.com/mindthetic/postcss-negative-padding
 [PostCSS]: https://github.com/postcss/postcss
-[Gulp PostCSS]: https://github.com/postcss/gulp-postcss
-[Grunt PostCSS]: https://github.com/nDmitry/grunt-postcss
