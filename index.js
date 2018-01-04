@@ -1,8 +1,8 @@
 import postcss from 'postcss';
 import valueParser from 'postcss-value-parser';
 
-export default postcss.plugin('postcss-negative-padding', function (opts) {
-    opts = opts || {};
+module.export = postcss.plugin('postcss-negative-padding', () => {
+    // opts = opts || {};
 
     var padding = function (decl) {
 
@@ -35,8 +35,9 @@ export default postcss.plugin('postcss-negative-padding', function (opts) {
 
             properties.forEach((side, index) => {
                     const number = valueParser.unit(values[index]).number
-                    const unit = valueParser.unit(values[index]).unit
-                    const negative = number < 0 ? true : false;
+                    // const unit = valueParser.unit(values[index]).unit
+                    // const negative = number < 0 ? true : false;
+                    const negative = number < 0;
 
                     // Create margin property for each side if value negative
                     if (negative) {
@@ -51,9 +52,10 @@ export default postcss.plugin('postcss-negative-padding', function (opts) {
             const re = /(padding)-(top|right|bottom|left)/i;
             var side = decl.prop.match(re)[2];
 
-            const number = valueParser.unit(decl.value).number
-            const unit = valueParser.unit(decl.value).unit
-            const negative = number < 0 ? true : false;
+            const number = valueParser.unit(decl.value).number;
+            const unit = valueParser.unit(decl.value).unit;
+            // const negative = number < 0 ? true : false;
+            const negative = number < 0;
 
             decl.before({
                 prop:  `padding-${ side }`,
@@ -71,7 +73,7 @@ export default postcss.plugin('postcss-negative-padding', function (opts) {
         decl.remove();
     }
 
-    return function (css, result) {
+    return function (css) {
 
         const propertyMatch = new RegExp(`^(padding)`);
 

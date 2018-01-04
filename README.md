@@ -5,7 +5,7 @@
 [![Windows Build Status][win-img]][win-url]
 [![Gitter Chat][git-img]][git-url]
 
-[postcss-negative-padding] lets you use negative values when using `padding` which creates the appropriate negative margin to compliment it.
+A PostCSS plugin which lets you use negative values within the `padding` property and creates appropriate negative margins to match
 
 ```css
 .example {
@@ -15,8 +15,14 @@
 /* becomes */
 
 .example {
-    padding: 20px;
-    margin: -20px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    margin-top: -20px;
+    margin-right: -20px;
+    margin-bottom: -20px;
+    margin-left: -20px;
 }
 ```
 
