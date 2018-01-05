@@ -1,6 +1,6 @@
 {
   "name": "postcss-negative-padding",
-  "version": "1.0.1",
+  "version": "0.0.4",
   "description": "A PostCSS plugin which lets you use negative values within the `padding` property and creates appropriate negative margins to match",
   "author": "Gavin <gavin@mindthetic.com>",
   "license": "CC0-1.0",
@@ -16,7 +16,7 @@
   "scripts": {
     "clean": "git clean -X -d -f",
     "prepublishOnly": "npm test",
-    "pretest": "rollup -c .rollup.js",
+    "pretest": "rollup -c .rollup.js --silent",
     "test": "echo 'Running tests...'; npm run test:js && npm run test:tape",
     "test:js": "eslint *.js --cache --ignore-path .gitignore --quiet",
     "test:tape": "postcss-tape"
@@ -48,6 +48,7 @@
     "postcss",
     "css",
     "postcss-plugin",
-    "padding"
+    "padding",
+    "negative"
   ]
 }
