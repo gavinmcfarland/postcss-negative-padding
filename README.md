@@ -7,7 +7,7 @@
 
 A [PostCSS] plugin which lets you use negative values within the `padding` property and creates appropriate negative margins to match.
 
-## Usage
+## Usage
 
 Example:
 
