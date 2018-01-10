@@ -1,6 +1,4 @@
-# PostCSS Negative Padding
-
-[<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS Logo" width="90" height="90" align="right">][postcss]
+# PostCSS Negative Padding [<img src="https://postcss.github.io/postcss/logo.svg" alt="PostCSS Logo" width="90" height="90" align="right">][postcss]
 
 [![NPM Version][npm-img]][npm-url]
 [![Linux Build Status][cli-img]][cli-url]
@@ -8,6 +6,8 @@
 [![Gitter Chat][git-img]][git-url]
 
 A [PostCSS] plugin which lets you use negative values within the `padding` property and creates appropriate negative margins to match.
+
+## Usage
 
 Example:
 
