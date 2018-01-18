@@ -1,8 +1,8 @@
 {
   "name": "postcss-negative-padding",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A PostCSS plugin which lets you use negative values within the `padding` property and creates appropriate negative margins to match",
-  "author": "Gavin <gavin@mindthetic.com>",
+  "author": "Gavin <someotter@tadpot.com>",
   "license": "CC0-1.0",
   "repository": "mindthetic/postcss-negative-padding",
   "homepage": "https://github.com/mindthetic/postcss-negative-padding#readme",
@@ -25,7 +25,8 @@
     "node": ">=4.0.0"
   },
   "dependencies": {
-    "postcss": "^6.0"
+    "postcss": "^6.0",
+    "postcss-value-parser": "^3.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.26",
@@ -35,7 +36,6 @@
     "eslint": "^4.14",
     "eslint-config-dev": "2.0",
     "postcss-tape": "2.2",
-    "postcss-value-parser": "^3.3.0",
     "pre-commit": "^1.2",
     "rollup": "^0.53",
     "rollup-plugin-babel": "^3.0"
