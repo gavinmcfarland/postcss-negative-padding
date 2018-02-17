@@ -10,6 +10,7 @@ export default postcss.plugin("postcss-negative-padding", () => {
 		const properties = ["top", "right", "bottom", "left"];
 
 		if (decl.prop === "padding") {
+
 			if (values.length === 1) {
 				values.push(values[0]);
 			}
@@ -25,16 +26,24 @@ export default postcss.plugin("postcss-negative-padding", () => {
 				const unit = valueParser.unit(values[index]).unit;
 
 				// Create padding property for each side
-				decl.before({
-					prop: `padding-${side}`,
-					value: Math.abs(number) + unit
-				});
+				if (values[index] === "inherit") {
+					decl.before({
+						prop: `padding-${side}`,
+						value: values[index]
+					});
+				}
+				else {
+					decl.before({
+						prop: `padding-${side}`,
+						value: Math.abs(number) + unit
+					});
+				}
+
+
 			});
 
 			properties.forEach((side, index) => {
 				const number = valueParser.unit(values[index]).number;
-				// const unit = valueParser.unit(values[index]).unit
-				// const negative = number < 0 ? true : false;
 				const negative = number < 0;
 
 				// Create margin property for each side if value negative
@@ -51,13 +60,20 @@ export default postcss.plugin("postcss-negative-padding", () => {
 
 			const number = valueParser.unit(decl.value).number;
 			const unit = valueParser.unit(decl.value).unit;
-			// const negative = number < 0 ? true : false;
 			const negative = number < 0;
 
-			decl.before({
-				prop: `padding-${side}`,
-				value: Math.abs(number) + unit
-			});
+			if (decl.value === "inherit") {
+				decl.before({
+					prop: `padding-${side}`,
+					value: decl.value
+				});
+			}
+			else {
+				decl.before({
+					prop: `padding-${side}`,
+					value: Math.abs(number) + unit
+				});
+			}
 
 			if (negative) {
 				decl.before({
