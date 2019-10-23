@@ -5,7 +5,7 @@
 [![Windows Build Status][win-img]][win-url]
 [![Gitter Chat][git-img]][git-url]
 
-A [PostCSS] plugin which lets you use negative values within the `padding` property and creates appropriate negative margins to match.
+A [PostCSS] plugin which lets you use negative values with `padding` to increase the hit area without effecting the layout. It uses negative margin to compensate for the padding to prevent movement in the layout.
 
 ## Usage
 
